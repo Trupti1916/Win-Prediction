@@ -42,8 +42,8 @@ print("Missing Data- \n",df.isnull().any())
 print("="*70)
 print("Count Of Missing Data-\n",df.isnull().sum())
 #Intution - missing data is present in Client Category Column only, 
-#sns.heatmap(df.isnull(), yticklabels=False, cbar=False, cmap='YlGnBu')
-#plt.show()
+sns.heatmap(df.isnull(), yticklabels=False, cbar=False, cmap='YlGnBu')
+plt.show()
 #we need to fill the missing values, in order to do so, we will check which category is used more number of times, 
 # Since it's categorical data we will use Mode
 Client_Category = df['Client Category'].value_counts()
@@ -156,9 +156,9 @@ print(df.head())
 df['DealDate_Quarter'] = df['Deal Date'].dt.quarter
 print('='*70)
 print(df.columns)
-df.pivot(columns=['DealDate_Quarter'], values=['Deal Cost']).plot.hist()
+#df.pivot(columns=['DealDate_Quarter'], values=['Deal Cost']).plot.hist()
 #sns.histplot(df.DealDate_Quarter, bins=4)
-plt.show()
+#plt.show()
 
 df = df.drop(['Deal Date'], axis=1)
 print(df.head(5))
